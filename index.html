@@ -1,0 +1,1721 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mistvale Tea Co. | Hill-grown tea, honestly made</title>
+  <meta name="description"
+    content="Hill-grown Assam, Darjeeling, kahwa, masala chai and herbal blends from Mistvale Tea Co. Thoughtfully packed and delivered across India.">
+  <link rel="canonical" href="https://mistvale.example/">
+  <link rel="shortcut icon" href="images/Fevicon.png" type="image/x-icon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mistvale Tea Co. | Hill-grown tea, honestly made">
+  <meta property="og:description"
+    content="Assam, Darjeeling, kahwa, masala chai and herbal blends, delivered across India.">
+  <meta property="og:image" content="https://mistvale.example/images/hero-banner.webp">
+  <meta property="og:url" content="https://mistvale.example/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#1f3d2b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --green: #1f3d2b;
+      --green-2: #31563e;
+      --leaf: #4f7942;
+      --cream: #f6f1e7;
+      --paper: #fbf8f1;
+      --parch: #ebe2cf;
+      --gold: #d9962b;
+      --ink: #1b1b1b;
+      --muted: #667064;
+      --err: #b3261e;
+      --line: rgba(31, 61, 43, .16);
+      --r: 10px;
+      --shadow: 0 18px 50px rgba(31, 61, 43, .10);
+      --shadow-sm: 0 8px 24px rgba(31, 61, 43, .10)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font: 16px/1.6 Inter, system-ui, sans-serif
+    }
+
+    body.no-scroll {
+      overflow: hidden
+    }
+
+    img {
+      max-width: 100%
+    }
+
+    button,
+    input,
+    select {
+      font: inherit
+    }
+
+    a {
+      color: inherit
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Fraunces, Georgia, serif;
+      color: var(--green);
+      line-height: 1.12;
+      margin: 0
+    }
+
+    h1 {
+      font-size: clamp(48px, 6.4vw, 82px);
+      letter-spacing: -.035em
+    }
+
+    h2 {
+      font-size: clamp(34px, 4vw, 50px);
+      letter-spacing: -.025em
+    }
+
+    h3 {
+      font-size: 23px
+    }
+
+    .wrap {
+      max-width: 1240px;
+      margin: auto;
+      padding: 0 22px
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--leaf)
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px
+    }
+
+    .topnote {
+      background: var(--green);
+      color: var(--cream);
+      font-size: 13px;
+      letter-spacing: .02em;
+      text-align: center;
+      padding: 9px 16px
+    }
+
+    .topnote strong {
+      color: #fff
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(246, 241, 231, .94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .nav {
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 28px
+    }
+
+    .brand img {
+      width: 190px;
+      height: auto;
+      display: block
+    }
+
+    .navlinks {
+      display: flex;
+      justify-content: center;
+      gap: 30px
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--green);
+      position: relative;
+      padding: 26px 0
+    }
+
+    .navlinks a:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 17px;
+      height: 2px;
+      background: var(--gold);
+      transition: right .2s ease
+    }
+
+    .navlinks a:hover:after {
+      right: 0
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid transparent;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: background-color .2s ease, border-color .2s ease, transform .2s ease
+    }
+
+    .icon-btn:hover {
+      background: var(--parch);
+      border-color: var(--line);
+      transform: translateY(-1px)
+    }
+
+    .cart-btn {
+      position: relative
+    }
+
+    .count {
+      position: absolute;
+      right: -1px;
+      top: -1px;
+      min-width: 19px;
+      height: 19px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 800;
+      display: grid;
+      place-items: center
+    }
+
+    .mobile-menu {
+      display: none
+    }
+
+    .hero {
+      padding: 70px 0 46px
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      gap: 58px;
+      align-items: center
+    }
+
+    .hero-copy {
+      max-width: 650px
+    }
+
+    .hero-copy .eyebrow {
+      margin-bottom: 18px
+    }
+
+    .hero-copy p {
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 570px;
+      color: #4e554e;
+      margin: 24px 0 30px
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      min-height: 48px;
+      border-radius: var(--r);
+      padding: 11px 20px;
+      border: 1px solid var(--green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease
+    }
+
+    .btn.primary {
+      background: var(--green);
+      color: var(--cream);
+      box-shadow: 0 8px 18px rgba(31, 61, 43, .15)
+    }
+
+    .btn.primary:hover {
+      background: var(--green-2);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(31, 61, 43, .2)
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--green)
+    }
+
+    .btn.secondary:hover {
+      background: rgba(31, 61, 43, .07);
+      transform: translateY(-1px)
+    }
+
+    .btn:active {
+      transform: translateY(0)
+    }
+
+    .btn:disabled {
+      opacity: .48;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none
+    }
+
+    .hero-media {
+      position: relative
+    }
+
+    .hero-media:before {
+      content: "";
+      position: absolute;
+      inset: -18px -18px 18px 18px;
+      background: var(--parch);
+      border-radius: 28px;
+      z-index: 0
+    }
+
+    .hero-media img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: block;
+      aspect-ratio: 1.65;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: var(--shadow)
+    }
+
+    .hero-stamp {
+      position: absolute;
+      z-index: 2;
+      right: -18px;
+      bottom: -22px;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.25;
+      transform: rotate(8deg);
+      box-shadow: 0 12px 25px rgba(31, 61, 43, .16)
+    }
+
+    .trust {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--paper)
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 20px 0
+    }
+
+    .trust-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 22px;
+      border-right: 1px solid var(--line)
+    }
+
+    .trust-item:first-child {
+      padding-left: 0
+    }
+
+    .trust-item:last-child {
+      border-right: 0
+    }
+
+    .trust-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--parch);
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      flex: none
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 13px;
+      color: var(--green)
+    }
+
+    .trust-item span {
+      font-size: 12px;
+      color: var(--muted)
+    }
+
+    section {
+      padding: 86px 0
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 28px
+    }
+
+    .section-head p {
+      max-width: 510px;
+      color: var(--muted);
+      margin: 0
+    }
+
+    .shop-tools {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 22px
+    }
+
+    .searchbox {
+      position: relative
+    }
+
+    .searchbox svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted)
+    }
+
+    input,
+    select {
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 10px 13px
+    }
+
+    .searchbox input {
+      width: 100%;
+      padding-left: 46px
+    }
+
+    .searchbox input:focus,
+    select:focus {
+      border-color: var(--green)
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 22px
+    }
+
+    .chip {
+      min-height: 40px;
+      padding: 8px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease
+    }
+
+    .chip:hover {
+      border-color: var(--green);
+      transform: translateY(-1px)
+    }
+
+    .chip[aria-pressed=true] {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--cream)
+    }
+
+    .sort {
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .sort label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px
+    }
+
+    .card {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid rgba(31, 61, 43, .10);
+      border-radius: 16px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-sm);
+      border-color: rgba(31, 61, 43, .20)
+    }
+
+    .card.out {
+      opacity: .86
+    }
+
+    .product-media {
+      position: relative;
+      overflow: hidden;
+      border-radius: 11px;
+      background: var(--parch);
+      cursor: pointer
+    }
+
+    .product-media:after {
+      content: "Quick view";
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 8px 10px;
+      text-align: center;
+      border-radius: 8px;
+      background: rgba(246, 241, 231, .93);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      transform: translateY(8px);
+      opacity: 0;
+      transition: opacity .2s ease, transform .2s ease
+    }
+
+    .product-media:hover:after,
+    .product-media:focus-visible:after {
+      opacity: 1;
+      transform: none
+    }
+
+    .product-media img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease
+    }
+
+    .card:hover .product-media img {
+      transform: scale(1.025)
+    }
+
+    .wish {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(251, 248, 241, .94);
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .06)
+    }
+
+    .wish[aria-pressed=true] {
+      color: var(--err)
+    }
+
+    .wish[aria-pressed=true] svg {
+      fill: currentColor
+    }
+
+    .tag {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      z-index: 2;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase
+    }
+
+    .card-body {
+      padding: 14px 5px 4px;
+      display: flex;
+      flex-direction: column;
+      flex: 1
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: flex-start
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 6px
+    }
+
+    .price {
+      font-weight: 800;
+      color: var(--green);
+      white-space: nowrap
+    }
+
+    .desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0 0 14px;
+      min-height: 62px
+    }
+
+    .rating {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px
+    }
+
+    .rating b {
+      color: var(--green)
+    }
+
+    .card .btn {
+      width: 100%;
+      margin-top: auto
+    }
+
+    .status {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .empty {
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 50px 20px;
+      border: 1px dashed var(--line);
+      border-radius: 16px;
+      color: var(--muted)
+    }
+
+    .alt {
+      background: var(--parch)
+    }
+
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch
+    }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid rgba(31, 61, 43, .10);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 25px rgba(31, 61, 43, .05)
+    }
+
+    .panel p {
+      color: var(--muted)
+    }
+
+    .pinrow {
+      display: flex;
+      gap: 10px
+    }
+
+    .pinrow input {
+      flex: 1
+    }
+
+    .result {
+      min-height: 24px;
+      margin: 12px 0 0;
+      font-size: 13px
+    }
+
+    .ok {
+      color: var(--green);
+      font-weight: 700
+    }
+
+    .err {
+      color: var(--err);
+      font-size: 13px
+    }
+
+    .shipping-list {
+      display: grid;
+      gap: 14px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none
+    }
+
+    .shipping-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start
+    }
+
+    .check {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(79, 121, 66, .12);
+      color: var(--leaf);
+      display: grid;
+      place-items: center;
+      flex: none
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    .review {
+      background: var(--paper);
+      border: 1px solid rgba(31, 61, 43, .10);
+      border-radius: 16px;
+      padding: 24px
+    }
+
+    .stars {
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-size: 13px
+    }
+
+    .review blockquote {
+      margin: 14px 0 20px;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 22px;
+      line-height: 1.3;
+      color: var(--green)
+    }
+
+    .review cite {
+      font-size: 12px;
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 700
+    }
+
+    .faq-wrap {
+      max-width: 900px
+    }
+
+    .faq details {
+      border-top: 1px solid var(--line);
+      padding: 20px 0
+    }
+
+    .faq details:last-child {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--green);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none
+    }
+
+    .faq summary:after {
+      content: "+";
+      font-size: 24px;
+      font-weight: 400;
+      transition: transform .2s ease
+    }
+
+    .faq details[open] summary:after {
+      transform: rotate(45deg)
+    }
+
+    .faq details p {
+      max-width: 760px;
+      color: var(--muted);
+      margin: 12px 0 0
+    }
+
+    .newsletter {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      background: var(--green);
+      color: var(--cream);
+      border-radius: 22px;
+      padding: 38px 42px
+    }
+
+    .newsletter h2 {
+      color: var(--cream);
+      font-size: 38px
+    }
+
+    .newsletter p {
+      color: rgba(246, 241, 231, .76);
+      margin: 10px 0 0;
+      max-width: 560px
+    }
+
+    .nlform {
+      display: flex;
+      gap: 8px
+    }
+
+    .nlform input {
+      min-width: 270px;
+      background: var(--paper)
+    }
+
+    .nlform .btn {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: var(--ink)
+    }
+
+    .nlform .btn:hover {
+      background: #e2a63b
+    }
+
+    .nlmsg {
+      grid-column: 2;
+      min-height: 20px;
+      margin: 0;
+      font-size: 12px
+    }
+
+    footer {
+      background: #173022;
+      color: var(--cream);
+      padding: 58px 0 28px
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 30px
+    }
+
+    .footer-brand img {
+      width: 190px;
+      filter: brightness(0) invert(1);
+      opacity: .94
+    }
+
+    .footer h3 {
+      color: var(--cream);
+      font-size: 16px;
+      font-family: Inter, sans-serif;
+      margin-bottom: 12px
+    }
+
+    .footer p,
+    .footer a {
+      color: rgba(246, 241, 231, .72);
+      font-size: 13px
+    }
+
+    .footer a {
+      text-decoration: none
+    }
+
+    .footer a:hover {
+      text-decoration: underline
+    }
+
+    .legal {
+      border-top: 1px solid rgba(246, 241, 231, .15);
+      margin-top: 34px;
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: rgba(246, 241, 231, .52);
+      font-size: 12px
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(13, 25, 19, .48);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s ease, visibility .25s ease;
+      z-index: 80
+    }
+
+    .drawer {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: min(450px, 100%);
+      background: var(--paper);
+      z-index: 81;
+      transform: translateX(102%);
+      transition: transform .3s cubic-bezier(.2, .75, .2, 1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: -20px 0 60px rgba(0, 0, 0, .15)
+    }
+
+    body.cart-open .drawer-backdrop {
+      opacity: 1;
+      visibility: visible
+    }
+
+    body.cart-open .drawer {
+      transform: none
+    }
+
+    .drawer-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .drawer-head h2 {
+      font-size: 30px
+    }
+
+    .drawer-body {
+      padding: 20px;
+      overflow: auto;
+      flex: 1
+    }
+
+    .shipping-progress {
+      background: var(--parch);
+      padding: 14px;
+      border-radius: 12px;
+      margin-bottom: 16px
+    }
+
+    .progress-track {
+      height: 6px;
+      background: rgba(31, 61, 43, .12);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 8px
+    }
+
+    .progress-track i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--green);
+      transition: width .25s ease
+    }
+
+    .line {
+      display: grid;
+      grid-template-columns: 62px 1fr auto;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: center
+    }
+
+    .line img {
+      width: 62px;
+      height: 62px;
+      border-radius: 9px;
+      object-fit: cover;
+      background: var(--parch)
+    }
+
+    .line strong {
+      font-size: 13px;
+      color: var(--green)
+    }
+
+    .line-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 3px 0 7px
+    }
+
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .qty button {
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: 7px;
+      cursor: pointer;
+      color: var(--green)
+    }
+
+    .qty button:hover {
+      background: var(--parch)
+    }
+
+    .remove {
+      border: 0;
+      background: none;
+      color: var(--muted);
+      font-size: 11px;
+      cursor: pointer;
+      padding: 0
+    }
+
+    .remove:hover {
+      color: var(--err)
+    }
+
+    .coupon {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      margin-top: 20px
+    }
+
+    .coupon input {
+      min-width: 0
+    }
+
+    .totals {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      margin: 20px 0;
+      color: var(--muted);
+      font-size: 13px
+    }
+
+    .totals strong {
+      font-size: 17px;
+      color: var(--green)
+    }
+
+    .checkout {
+      width: 100%
+    }
+
+    .drawer-empty {
+      text-align: center;
+      padding: 60px 10px;
+      color: var(--muted)
+    }
+
+    dialog {
+      width: min(650px, 92vw);
+      border: 0;
+      border-radius: 20px;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 0;
+      box-shadow: 0 25px 90px rgba(0, 0, 0, .25)
+    }
+
+    dialog::backdrop {
+      background: rgba(13, 25, 19, .58);
+      backdrop-filter: blur(4px)
+    }
+
+    .qv {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr
+    }
+
+    .qv img {
+      width: 100%;
+      height: 100%;
+      min-height: 330px;
+      object-fit: cover;
+      background: var(--parch)
+    }
+
+    .qv-copy {
+      padding: 30px
+    }
+
+    .qv-copy h2 {
+      font-size: 38px;
+      margin: 8px 0 12px
+    }
+
+    .qv-copy p {
+      color: var(--muted)
+    }
+
+    .qv-price {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--green);
+      margin: 18px 0
+    }
+
+    .dialog-close {
+      position: absolute;
+      right: 12px;
+      top: 12px
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translate(-50%, 18px);
+      opacity: 0;
+      pointer-events: none;
+      background: var(--green);
+      color: var(--cream);
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      z-index: 100;
+      transition: opacity .2s ease, transform .2s ease
+    }
+
+    .toast.on {
+      opacity: 1;
+      transform: translate(-50%, 0)
+    }
+
+    @media(max-width:1050px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .navlinks {
+        gap: 18px
+      }
+
+      .hero-grid {
+        gap: 34px
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: 0
+      }
+
+      .trust-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line)
+      }
+    }
+
+    @media(max-width:820px) {
+      .nav {
+        grid-template-columns: auto auto
+      }
+
+      .navlinks {
+        display: none
+      }
+
+      .mobile-menu {
+        display: grid
+      }
+
+      .nav-actions {
+        margin-left: auto
+      }
+
+      .hero {
+        padding-top: 42px
+      }
+
+      .hero-grid,
+      .delivery-grid,
+      .newsletter,
+      .footer-grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero-media {
+        margin-top: 12px
+      }
+
+      .hero-stamp {
+        right: 8px
+      }
+
+      .shop-tools {
+        grid-template-columns: 1fr
+      }
+
+      .reviews {
+        grid-template-columns: 1fr
+      }
+
+      .newsletter {
+        padding: 28px
+      }
+
+      .nlform {
+        flex-direction: column
+      }
+
+      .nlform input {
+        min-width: 0
+      }
+
+      .nlmsg {
+        grid-column: 1
+      }
+
+      .footer-grid {
+        gap: 24px
+      }
+    }
+
+    @media(max-width:620px) {
+      .wrap {
+        padding: 0 16px
+      }
+
+      .brand img {
+        width: 155px
+      }
+
+      .nav {
+        min-height: 68px
+      }
+
+      .nav-actions {
+        gap: 0
+      }
+
+      .hero-copy p {
+        font-size: 17px
+      }
+
+      .hero-stamp {
+        width: 92px;
+        height: 92px;
+        font-size: 10px
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px
+      }
+
+      .card {
+        padding: 7px;
+        border-radius: 13px
+      }
+
+      .card-body {
+        padding: 11px 4px 4px
+      }
+
+      .card h3 {
+        font-size: 17px
+      }
+
+      .desc {
+        font-size: 12px;
+        min-height: 0
+      }
+
+      .card .btn {
+        font-size: 12px;
+        padding: 9px 8px
+      }
+
+      .price {
+        font-size: 13px
+      }
+
+      .section-head {
+        display: block
+      }
+
+      .section-head p {
+        margin-top: 10px
+      }
+
+      .pinrow {
+        flex-direction: column
+      }
+
+      .panel {
+        padding: 22px
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr
+      }
+
+      .trust-item,
+      .trust-item:first-child {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 12px 0
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0
+      }
+
+      .qv {
+        grid-template-columns: 1fr
+      }
+
+      .qv img {
+        min-height: 230px;
+        max-height: 300px
+      }
+
+      .qv-copy {
+        padding: 24px
+      }
+
+      .qv-copy h2 {
+        font-size: 30px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *:before,
+      *:after {
+        transition: none !important;
+        animation: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topnote">Free shipping on orders <strong>₹499+</strong> · Packed with care from Siliguri</div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Mistvale Tea Co. home"><img src="images/logo.svg"
+          alt="Mistvale Tea Co."></a>
+      <nav class="navlinks" aria-label="Main navigation"><a href="#shop">Shop</a><a href="#delivery">Delivery</a><a
+          href="#reviews">Reviews</a><a href="#faq">FAQ</a></nav>
+      <div class="nav-actions"><button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open navigation"
+          aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg></button><button class="icon-btn cart-btn" id="cartbtn" aria-label="Open cart"><svg width="20"
+            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M5 7h15l-1.2 12H7L5 7Z" />
+            <path d="M9 7a3 3 0 0 1 6 0" />
+          </svg><span class="count" id="count">0</span></button></div>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">From hill estates to your cup</div>
+          <h1>Tea with a little more soul.</h1>
+          <p>Malty Assam, delicate Darjeeling and warming blends — thoughtfully packed, easy to shop, and made for slow
+            mornings.</p>
+          <div class="actions"><a class="btn primary" href="#shop">Shop the collection <span
+                aria-hidden="true">→</span></a><a class="btn secondary" href="#faq">Why Mistvale?</a></div>
+        </div>
+        <div class="hero-media"><img src="images/hero-banner.webp" width="1200" height="563"
+            alt="Mistvale tea landscape with a warm morning sky" fetchpriority="high">
+          <div class="hero-stamp">HILL-GROWN<br>HONESTLY<br>MADE</div>
+        </div>
+      </div>
+    </section>
+    <section class="trust">
+      <div class="wrap trust-grid">
+        <div class="trust-item"><span class="trust-icon">✓</span>
+          <div><strong>Free shipping</strong><span>on ₹499 and above</span></div>
+        </div>
+        <div class="trust-item"><span class="trust-icon">⌁</span>
+          <div><strong>Fresh harvests</strong><span>packed with care</span></div>
+        </div>
+        <div class="trust-item"><span class="trust-icon">↺</span>
+          <div><strong>7-day returns</strong><span>on unopened packs</span></div>
+        </div>
+        <div class="trust-item"><span class="trust-icon">◌</span>
+          <div><strong>India-wide delivery</strong><span>check your pincode</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="shop">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">The tea shelf</div>
+            <h2>Find your everyday favourite.</h2>
+          </div>
+          <p>Filter by style, search by flavour, or browse the full collection. Sold-out teas stay visible so you know
+            what is coming back.</p>
+        </div>
+        <div class="shop-tools">
+          <div class="searchbox"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-4-4" />
+            </svg><label class="sr-only" for="search">Search teas</label><input id="search" type="search"
+              placeholder="Search tea, flavour or ingredient…" autocomplete="off"></div>
+          <div class="sort"><label for="sort">Sort</label><select id="sort">
+              <option value="default">Featured</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+              <option value="name">Name</option>
+            </select></div>
+        </div>
+        <div class="filters" id="chips" role="group" aria-label="Filter by category"></div>
+        <p class="status" id="status" role="status"></p>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+    <section class="alt" id="delivery">
+      <div class="wrap delivery-grid">
+        <div class="panel">
+          <div class="eyebrow">Doorstep check</div>
+          <h2>Will we reach you?</h2>
+          <p>Enter your six-digit pincode for a quick delivery estimate. No account needed.</p>
+          <form id="pinform" novalidate><label class="sr-only" for="pin">Pincode</label>
+            <div class="pinrow"><input id="pin" inputmode="numeric" maxlength="6" autocomplete="postal-code"
+                placeholder="e.g. 411001"><button class="btn primary" id="pinbtn">Check delivery</button></div>
+          </form>
+          <p id="pinres" class="result" role="status"></p>
+        </div>
+        <div class="panel">
+          <div class="eyebrow">The Mistvale promise</div>
+          <h3>Good tea should feel uncomplicated.</h3>
+          <ul class="shipping-list">
+            <li><span class="check">✓</span><span><strong>Simple shopping</strong><br><span class="muted">Clear prices,
+                  live cart limits and no surprise fees.</span></span></li>
+            <li><span class="check">✓</span><span><strong>Careful packing</strong><br><span class="muted">Tea stays
+                  protected from heat, light and strong smells.</span></span></li>
+            <li><span class="check">✓</span><span><strong>Made for gifting</strong><br><span class="muted">The sampler
+                  arrives ready to make someone’s day.</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="reviews">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">From the tea table</div>
+            <h2>What customers say.</h2>
+          </div>
+          <p>Short notes from shoppers who have made Mistvale part of their routine.</p>
+        </div>
+        <div class="reviews">
+          <article class="review">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <blockquote>“Best masala chai I have ever had. Tastes like my nani's kitchen.”</blockquote><cite>Ananya ·
+              Pune</cite>
+          </article>
+          <article class="review">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <blockquote>“The Darjeeling first flush is so fresh. Packaging was lovely too.”</blockquote><cite>Rohit ·
+              Bengaluru</cite>
+          </article>
+          <article class="review">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <blockquote>“Bought the sampler as a gift and now my whole family is hooked.”</blockquote><cite>Meera ·
+              Kochi</cite>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="alt faq" id="faq">
+      <div class="wrap faq-wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Need to know</div>
+            <h2>Questions, answered.</h2>
+          </div>
+        </div>
+        <div id="faqs"></div>
+      </div>
+    </section>
+    <section id="news">
+      <div class="wrap">
+        <div class="newsletter">
+          <div>
+            <div class="eyebrow" style="color:#d9962b">The tea club</div>
+            <h2>A better inbox.</h2>
+            <p>New harvests, brewing notes and occasional offers. No daily noise.</p>
+          </div>
+          <form class="nlform" id="nl" novalidate><label class="sr-only" for="em">Email address</label><input id="em"
+              type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="nlmsg"><button
+              class="btn" type="submit">Join the club</button></form>
+          <p id="nlmsg" class="nlmsg" role="status"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="contact">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="images/logo.svg" alt="Mistvale Tea Co.">
+          <p>Hill-grown tea, honestly made. Assam, Darjeeling and warming blends, delivered across India.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <p><a href="#shop">Shop teas</a><br><a href="#delivery">Delivery check</a><br><a href="#faq">FAQ</a></p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>14 Hill Cart Road<br>Siliguri, West Bengal 734001<br><a
+              href="mailto:hello@mistvale.example">hello@mistvale.example</a><br><a href="tel:+919000012345">+91 90000
+              12345</a></p>
+        </div>
+      </div>
+      <div class="legal"><span>© 2026 Mistvale Tea Co. All rights reserved.</span><span>Prices include GST · Returns on
+          unopened packs within 7 days.</span></div>
+    </div>
+  </footer>
+  <div class="drawer-backdrop" id="bk"></div>
+  <aside class="drawer" id="cart" aria-label="Your shopping cart" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Your cart</h2><button class="icon-btn" id="cx" aria-label="Close cart"><span aria-hidden="true"
+          style="font-size:25px">×</span></button>
+    </div>
+    <div class="drawer-body">
+      <div class="shipping-progress"><strong id="shipmsg">Add tea to your cart.</strong>
+        <div class="progress-track"><i id="fill"></i></div>
+      </div>
+      <div id="lines"></div>
+      <form class="coupon" id="cf" novalidate><label class="sr-only" for="coupon">Coupon code</label><input id="coupon"
+          autocapitalize="characters" placeholder="Coupon code"><button class="btn secondary"
+          type="submit">Apply</button></form>
+      <p id="cmsg" class="result" role="status"></p>
+      <div class="totals" id="tot"></div><button class="btn primary checkout" id="checkout" type="button">Continue to
+        checkout</button>
+    </div>
+  </aside>
+  <dialog id="qv"><button class="icon-btn dialog-close" id="qvx" aria-label="Close product details">×</button>
+    <div id="qvb"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <form id="checkout-form" action="https://mistvale.example/cart/checkout" method="POST" hidden><input type="hidden"
+      name="items"><input type="hidden" name="coupon"></form>
+  <script>
+
+    const PRODUCTS = [
+      { id: 101, name: "Assam Breakfast Black Tea", category: "Black", price: 349, stock: 40, image: "images/p101.webp", desc: "Strong, malty CTC tea from Upper Assam estates. Perfect with milk and a little sugar in the morning." },
+      { id: 102, name: "Darjeeling First Flush", category: "Black", price: 1299, stock: 12, image: "images/p102.webp", desc: "Delicate, floral spring harvest leaves with a muscatel note. Best without milk.", rating: 4.8, reviews: 128 },
+      { id: 103, name: "Kashmiri Kahwa", category: "Green", price: 549, stock: 25, image: "images/p103.webp", desc: "Green tea with saffron, cardamom, cinnamon and almond flakes." },
+      { id: 104, name: "Masala Chai Blend", category: "Black", price: 399, stock: 60, image: "images/p104.webp", desc: "Bold Assam leaves with ginger, cardamom, clove and black pepper. Our bestseller.", rating: 4.7, reviews: 342 },
+      { id: 105, name: "Nilgiri Green Tea", category: "Green", price: 449, stock: 30, image: "images/p105.webp", desc: "Smooth, grassy green tea from the Blue Mountains of the south." },
+      { id: 106, name: "Chamomile & Tulsi", category: "Herbal", price: 499, stock: 18, image: "images/p106.webp", desc: "Caffeine-free calming blend of chamomile flowers and holy basil." },
+      { id: 107, name: "Hibiscus Rose Infusion", category: "Herbal", price: 599, stock: 0, image: "images/p107.webp", desc: "Tangy hibiscus with rose petals. Lovely iced." },
+      { id: 108, name: "Tea Lover's Sampler Gift Box", category: "Gifts", price: 1899, stock: 9, image: "images/p108.webp", desc: "Six of our favourite teas in a wooden gift box with a brewing guide." }
+    ];
+
+
+    const API = {
+
+      search: function (query) {
+        const q = String(query).trim().toLowerCase();
+        const delay = Math.max(120, 900 - q.length * 140);
+        return new Promise(function (resolve) {
+          setTimeout(function () {
+            resolve(PRODUCTS.filter(function (p) {
+              return p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+            }).map(function (p) { return p.id; }));
+          }, delay);
+        });
+      },
+
+      checkPincode: function (pin) {
+        const zones = { '73': 2, '70': 3, '71': 3, '11': 4, '40': 4, '56': 5, '60': 5, '50': 5 };
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            if (!/^[1-9][0-9]{5}$/.test(String(pin))) return reject(new Error('INVALID_PINCODE'));
+            const days = zones[String(pin).slice(0, 2)];
+            resolve(days ? { serviceable: true, days: days } : { serviceable: false });
+          }, 400 + Math.random() * 600);
+        });
+      }
+    };
+
+    const $ = s => document.querySelector(s), MAX = 5, FREE = 499, CAP = 150, MIN = 399;
+    const inr = n => '₹' + Number(n).toLocaleString('en-IN', { maximumFractionDigits: 2 });
+    const lim = p => Math.min(MAX, p.stock), P = id => PRODUCTS.find(p => p.id === Number(id));
+    function ld(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v } catch (e) { return d } }
+    function sv(k, v) { try { localStorage.setItem(k, JSON.stringify(v)) } catch (e) { } }
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    let cart = (Array.isArray(ld('mv_cart', [])) ? ld('mv_cart', []) : []).map(c => ({ id: Number(c && c.id), qty: Math.floor(Number(c && c.qty)) })).filter(c => P(c.id) && P(c.id).stock > 0 && c.qty > 0).map(c => ({ id: c.id, qty: Math.min(c.qty, lim(P(c.id))) }));
+    let wish = new Set((Array.isArray(ld('mv_wish', [])) ? ld('mv_wish', []) : []).map(Number).filter(id => P(id)));
+    let coupon = '', seq = 0, tm, searchSeq = 0;
+    const S = { cat: 'all', sort: 'default', ids: null };
+    function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(t.h); t.h = setTimeout(() => t.classList.remove('on'), 2200) }
+    $('#chips').innerHTML = ['all', 'Black', 'Green', 'Herbal', 'Gifts'].map(c => `<button class="chip" data-cat="${c}" aria-pressed="${c === 'all'}">${c === 'all' ? 'All teas' : c}</button>`).join('');
+    function getVisible() {
+      const cmp = { low: (a, b) => a.price - b.price, high: (a, b) => b.price - a.price, name: (a, b) => a.name.localeCompare(b.name), default: (a, b) => a.id - b.id }[S.sort];
+      return PRODUCTS.filter(p => (S.cat === 'all' || p.category === S.cat) && (!S.ids || S.ids.includes(p.id))).slice().sort((a, b) => ((a.stock === 0) - (b.stock === 0)) || cmp(a, b));
+    }
+    function render() {
+      const list = getVisible();
+      $('#grid').innerHTML = list.length ? list.map(p => {
+        const q = (cart.find(c => c.id === p.id) || { qty: 0 }).qty, out = p.stock === 0, badge = p.id === 104 ? 'Bestseller' : p.id === 108 ? 'Gift favourite' : out ? 'Sold out' : ''; return `<article class="card${out ? ' out' : ''}">
+    ${badge ? `<span class="tag">${esc(badge)}</span>` : ''}<button class="wish" data-wish="${p.id}" aria-pressed="${wish.has(p.id)}" aria-label="${wish.has(p.id) ? 'Remove' : 'Save'} ${esc(p.name)} ${wish.has(p.id) ? 'from' : 'to'} wishlist"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 8.8c0 5.1-8.8 10.4-8.8 10.4S3.2 13.9 3.2 8.8A4.6 4.6 0 0 1 12 6.4a4.6 4.6 0 0 1 8.8 2.4Z"/></svg></button>
+    <button class="product-media" data-qv="${p.id}" aria-label="Quick view ${esc(p.name)}"><img src="${p.image}" alt="${esc(p.name)} tea pack" width="600" height="600" loading="lazy"></button>
+    <div class="card-body"><div class="card-top"><h3>${esc(p.name)}</h3><span class="price">${inr(p.price)}</span></div>${p.rating ? `<div class="rating"><b>★ ${p.rating}</b> · ${p.reviews} reviews</div>` : ''}<p class="desc">${esc(p.desc)}</p><button class="btn primary" data-add="${p.id}" ${out || q >= lim(p) ? 'disabled' : ''}>${out ? 'Sold out' : q >= lim(p) ? 'Max in cart' : 'Add to cart'}</button></div></article>`
+      }).join('') : `<div class="empty">No teas match that search. Try another phrase or category.</div>`;
+      $('#status').textContent = list.length ? `${list.length} ${list.length === 1 ? 'tea' : 'teas'} shown` : '';
+    }
+    function save() { sv('mv_cart', cart); render(); drawCart() }
+    function add(id) { const p = P(id); if (!p || p.stock < 1) return; let c = cart.find(x => x.id === p.id); if (c && c.qty >= lim(p)) { toast('That tea has reached the 5-pack cart limit.'); return } c ? c.qty++ : cart.push({ id: p.id, qty: 1 }); save(); toast(`Added ${p.name}`) }
+    function calc() { let sub = 0, eligible = 0; cart.forEach(c => { const p = P(c.id), v = p.price * c.qty; sub += v; if (p.category !== 'Gifts') eligible += v }); if (coupon && (sub < MIN || eligible <= 0)) coupon = ''; const discount = coupon ? Math.round(Math.min(CAP, eligible * .10) * 100) / 100 : 0, net = Math.max(0, sub - discount), ship = cart.length ? (net >= FREE ? 0 : 49) : 0, total = Math.round((net + ship) * 100) / 100; return { sub, eligible, discount, net, ship, total } }
+    function drawCart() {
+      const k = calc(); $('#count').textContent = cart.reduce((s, c) => s + c.qty, 0); $('#lines').innerHTML = cart.length ? cart.map(c => { const p = P(c.id); return `<div class="line"><img src="${p.image}" alt=""><div><strong>${esc(p.name)}</strong><div class="line-meta">${inr(p.price)} each · ${inr(p.price * c.qty)}</div><div class="qty"><button data-m="${p.id}" aria-label="Decrease ${esc(p.name)}">−</button><span aria-live="polite">${c.qty}</span><button data-p="${p.id}" aria-label="Increase ${esc(p.name)}" ${c.qty >= lim(p) ? 'disabled' : ''}>+</button><button class="remove" data-r="${p.id}">Remove</button></div></div><strong>${inr(p.price * c.qty)}</strong></div>` }).join('') : `<div class="drawer-empty"><div style="font-size:42px;color:var(--green)">⌁</div><h3>Your cart is waiting.</h3><p>Add a tea and we’ll keep it here.</p><a class="btn secondary" href="#shop" id="emptyShop">Browse teas</a></div>`;
+      const left = Math.max(0, FREE - k.net); $('#shipmsg').textContent = !cart.length ? 'Add tea to your cart.' : left ? `Add ${inr(left)} more for free shipping.` : 'You have free shipping.'; $('#fill').style.width = Math.min(100, k.net / FREE * 100) + '%'; $('#tot').innerHTML = `<span>Subtotal</span><span>${inr(k.sub)}</span>` + (k.discount ? `<span>Discount (${esc(coupon)})</span><span>−${inr(k.discount)}</span>` : '') + `<span>Shipping</span><span>${k.ship ? inr(k.ship) : 'Free'}</span><strong>Total</strong><strong>${inr(k.total)}</strong>`; $('#checkout').disabled = !cart.length; $('#coupon').value = coupon; $('#cmsg').textContent = coupon ? `10% off eligible teas, capped at ${inr(CAP)}.` : ''; $('#cmsg').className = coupon ? 'ok' : 'result'
+    }
+    function openCart() { document.body.classList.add('cart-open', 'no-scroll'); $('#cart').setAttribute('aria-hidden', 'false'); drawCart(); $('#cx').focus() }
+    function closeCart() { document.body.classList.remove('cart-open', 'no-scroll'); $('#cart').setAttribute('aria-hidden', 'true'); $('#cartbtn').focus() }
+    $('#cartbtn').onclick = openCart; $('#cx').onclick = closeCart; $('#bk').onclick = closeCart; document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('cart-open')) closeCart() });
+    $('#lines').onclick = e => { const t = e.target.closest('button'); if (!t) return; if (t.id === 'emptyShop') return; const id = Number(t.dataset.m || t.dataset.p || t.dataset.r), c = cart.find(x => x.id === id); if (!c) return; if (t.dataset.p && c.qty < lim(P(id))) c.qty++; if (t.dataset.m) c.qty--; if (t.dataset.r) c.qty = 0; cart = cart.filter(x => x.qty > 0); save() };
+    $('#cf').onsubmit = e => { e.preventDefault(); const code = $('#coupon').value.trim().toUpperCase(), m = $('#cmsg'), k = calc(); m.className = 'err'; if (code !== 'WELCOME10') m.textContent = 'That code is not valid.'; else if (coupon) m.textContent = 'This coupon is already applied.'; else if (k.sub < MIN) m.textContent = `Spend at least ${inr(MIN)} to use this coupon.`; else if (k.eligible <= 0) m.textContent = 'Gift boxes are not eligible for this coupon.'; else { coupon = code; m.className = 'ok'; m.textContent = `10% off eligible teas, capped at ${inr(CAP)}.` } drawCart() };
+    $('#checkout').onclick = () => { if (!cart.length) return; toast('Checkout is ready — demo endpoint not connected.'); };
+    $('#emptyShop')?.addEventListener('click', () => closeCart());
+    $('#grid').onclick = e => { const t = e.target.closest('button'); if (!t) return; if (t.dataset.add) add(t.dataset.add); if (t.dataset.wish) { const id = Number(t.dataset.wish); wish.has(id) ? wish.delete(id) : wish.add(id); sv('mv_wish', [...wish]); render() } if (t.dataset.qv) { const p = P(t.dataset.qv); $('#qvb').innerHTML = `<div class="qv"><img src="${p.image}" alt="${esc(p.name)} tea pack"><div class="qv-copy"><div class="eyebrow">${esc(p.category)} tea</div><h2>${esc(p.name)}</h2><p>${esc(p.desc)}</p>${p.rating ? `<div class="rating"><b>★ ${p.rating}</b> · ${p.reviews} reviews</div>` : ''}<div class="qv-price">${inr(p.price)}</div><button class="btn primary" data-qadd="${p.id}" ${p.stock ? '' : 'disabled'}>${p.stock ? 'Add to cart' : 'Sold out'}</button></div></div>`; $('#qv').showModal(); } };
+    $('#qvb').onclick = e => { const t = e.target.closest('[data-qadd]'); if (t) { add(t.dataset.qadd); $('#qv').close() } }; $('#qvx').onclick = () => $('#qv').close();
+    $('#chips').onclick = e => { const b = e.target.closest('[data-cat]'); if (!b) return; S.cat = b.dataset.cat; document.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === b)); render() };
+    $('#sort').onchange = e => { S.sort = e.target.value; render() };
+    $('#search').oninput = e => { clearTimeout(tm); const q = e.target.value.trim(), my = ++searchSeq; if (!q) { S.ids = null; render(); return } tm = setTimeout(() => API.search(q).then(ids => { if (my !== searchSeq) return; S.ids = ids; render() }).catch(() => { if (my === searchSeq) { S.ids = []; render(); toast('Search is temporarily unavailable.') } }), 180) };
+    $('#pinform').onsubmit = e => { e.preventDefault(); const pin = $('#pin').value.trim(), r = $('#pinres'), b = $('#pinbtn'); r.className = 'result err'; if (!/^[1-9][0-9]{5}$/.test(pin)) { r.textContent = 'Enter a valid 6-digit pincode.'; return } r.className = 'result'; r.textContent = 'Checking…'; b.disabled = true; API.checkPincode(pin).then(x => { r.className = x.serviceable ? 'result ok' : 'result err'; r.textContent = x.serviceable ? `We deliver to ${pin} in about ${x.days} working days.` : `Sorry, we cannot deliver to ${pin} yet.` }).catch(() => { r.className = 'result err'; r.textContent = 'Something went wrong. Please try again.' }).finally(() => b.disabled = false) };
+    $('#nl').onsubmit = e => { e.preventDefault(); const i = $('#em'), m = $('#nlmsg'), ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i.value.trim()); i.setAttribute('aria-invalid', String(!ok)); m.className = ok ? 'nlmsg ok' : 'nlmsg err'; m.textContent = ok ? 'You’re in. Check your inbox for the welcome note.' : 'Enter a valid email address.'; if (ok) i.value = '' };
+    const FAQ = [['How long does delivery take?', '2 to 5 working days depending on your pincode. Use the delivery check to see yours.'], ['Can I return tea?', 'Unopened packs can be returned within 7 days of delivery. Opened tea cannot be returned for hygiene reasons.'], ['How should I store my tea?', 'In an airtight container, away from light, heat and strong smells. It tastes best within 6 months of opening.'], ['Is Chamomile & Tulsi caffeine-free?', 'Yes, it is a caffeine-free herbal blend.'], ['Do you ship outside India?', 'Not yet. We currently deliver within India only.'], ['Can I send tea as a gift?', 'Yes. The Tea Lover’s Sampler comes in a wooden gift box with a brewing guide.']];
+    $('#faqs').innerHTML = FAQ.map(f => `<details><summary>${esc(f[0])}</summary><p>${esc(f[1])}</p></details>`).join('');
+    const B = 'https://mistvale.example/'; const ldScript = document.createElement('script'); ldScript.type = 'application/ld+json'; ldScript.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': [{ '@type': 'OnlineStore', name: 'Mistvale Tea Co.', url: B, logo: B + 'images/logo.svg', foundingDate: '2019', email: 'hello@mistvale.example', telephone: '+91 90000 12345', address: { '@type': 'PostalAddress', streetAddress: '14 Hill Cart Road', addressLocality: 'Siliguri', addressRegion: 'West Bengal', postalCode: '734001', addressCountry: 'IN' } }, ...PRODUCTS.map(p => ({ '@type': 'Product', name: p.name, description: p.desc, image: B + p.image, sku: String(p.id), ...(p.rating ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: p.rating, reviewCount: p.reviews } } : {}), offers: { '@type': 'Offer', priceCurrency: 'INR', price: p.price, availability: 'https://schema.org/' + (p.stock ? 'InStock' : 'OutOfStock'), url: B + '#shop' } })), { '@type': 'FAQPage', mainEntity: FAQ.map(f => ({ '@type': 'Question', name: f[0], acceptedAnswer: { '@type': 'Answer', text: f[1] } })) }] }); document.head.appendChild(ldScript);
+    $('#menuBtn').onclick = () => { const open = $('#menuBtn').getAttribute('aria-expanded') === 'true', links = document.querySelector('.navlinks'); $('#menuBtn').setAttribute('aria-expanded', String(!open)); links.classList.toggle('mobile-open', !open) };
+    render(); drawCart();
+
+  </script>
+</body>
+
+</html>
